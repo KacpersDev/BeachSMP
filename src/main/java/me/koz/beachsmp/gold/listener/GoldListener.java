@@ -1,15 +1,12 @@
 package me.koz.beachsmp.gold.listener;
 
-import be.maximvdw.placeholderapi.PlaceholderAPI;
-import be.maximvdw.placeholderapi.PlaceholderReplaceEvent;
-import be.maximvdw.placeholderapi.PlaceholderReplacer;
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.koz.beachsmp.Core;
 import me.koz.beachsmp.gold.Gold;
 import me.koz.beachsmp.gold.GoldInventory;
-import me.koz.beachsmp.gold.command.GoldShopCommand;
+import me.koz.beachsmp.gold.GoldPlaceHolder;
 import me.koz.beachsmp.utils.CC;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,6 +17,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Objects;
 
+@SuppressWarnings("ALL")
 public class GoldListener implements Listener {
 
     private final Core core;
@@ -33,17 +31,9 @@ public class GoldListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         this.gold = new Gold(this.core, event.getPlayer());
-        if (!this.gold.playerExists()) { this.gold.createPlayer(); }
-
-        // placeholderAPI
-        if (Bukkit.getPluginManager().isPluginEnabled("MVdWPlaceholderAPI")) {
-            PlaceholderAPI.registerPlaceholder(this.core, "%gold_amount%", new PlaceholderReplacer() {
-                @Override
-                public String onPlaceholderReplace(PlaceholderReplaceEvent placeholderReplaceEvent) {
-                    int g = gold.getGold();
-                    return String.valueOf(g);
-                }
-            });
+        if (!this.gold.playerExists()) {
+            this.gold.createPlayer();
+            PlaceholderAPI.registerPlaceholderHook(Core.getInstance(), new GoldPlaceHolder());
         }
     }
 

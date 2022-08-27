@@ -1,0 +1,7 @@
+random: false
+
+spawn: # world -> default will spawn on this coords if random is set to false
+  x: 500
+  y: 90
+  z: 500
+

@@ -1,0 +1,5 @@
+max-x: 1000
+max-z: 1000
+
+message: "&aTeleporting..."
+check: "&cChecking for safe location..."

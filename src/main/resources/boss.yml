@@ -1,0 +1,15 @@
+zombie: # ONLY INTEGERS. NUMBER IS ROUNDED
+  health: 100
+skeleton:
+  health: 100
+spider:
+  health: 100
+
+name: "&c%health% ❤" # heart ❤
+
+reward-1:
+  entity-type:
+reward-2:
+  entity-type:
+reward-3:
+  entity-type:

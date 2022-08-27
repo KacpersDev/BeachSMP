@@ -8,3 +8,7 @@ depend:
 commands:
   goldshop:
   goldadmin:
+  wild:
+    aliases: [rtp]
+  ct:
+  cc:
