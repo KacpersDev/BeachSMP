@@ -2,9 +2,11 @@ time: 30 # in seconds
 
 disabled-commands:
   - "spawn"
+  - "shop"
+  - "tpa"
 
 timer:
   timer: "&cCombat will expire in %timer%"
-  no-timer: "&cYou are not in combat"
-  expired: "&cCombat has expired"
+  no-timer: "&aYou are not in combat"
+  expired: "&aCombat tag has expired"
   activated: "&cCombat has been activated for 30 seconds."

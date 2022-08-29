@@ -3,7 +3,7 @@ version: '${project.version}'
 main: me.koz.beachsmp.Core
 api-version: 1.19
 description: Made by KacperM
-depend:
+softdepend:
   - MVdWPlaceholderAPI
 commands:
   goldshop:
@@ -12,3 +12,5 @@ commands:
     aliases: [rtp]
   ct:
   cc:
+  team:
+    aliases: [t]

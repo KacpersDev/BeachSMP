@@ -728,3 +728,6 @@ messages:
   add: "&aYou have added %amount% coins to %player%"
   remove: "&aYou have removed %amount% coins from %player%"
   check: "&a%player% has %amount% of gold"
+
+chat-format: "%rank% %player% %message%"
+chat-format-team: "%team% %rank% %player% %message%"

@@ -1,0 +1,45 @@
+settings: # if false message will be sent to player which executed this command
+  created-broadcast: true
+  disbanded-broadcast: true
+  home-teleport: 10 # seconds
+
+messages:
+  permission-leader: "&cYou need to have leader role to execute this command"
+  permission-captain: "&cYou need at least captain role to execute this command"
+  permission-coleader: "&cYou need at least coleader role to execute this command"
+  exists: "&cTeam %team% already exists"
+  not-exists: "&cTeam %team% does not exists."
+  created: "&cTeam %team% has been created"
+  disbanded: "&cTeam %team% has been disbanded"
+  no-team: "&cYou need to be in team to execute this command"
+  renamed: "&cTeam %team% has renamed to %renamed%"
+  in-team: "&cYou are already in team"
+  leave-leader: "&cYou cannot leave your own faction (/team disband)"
+  left: "&cYou have left %team%"
+  home-set: "&cTeam home has been set"
+  home: "&cTeleported"
+  home-teleport: "&cYou will be teleport to home in 10 seconds"
+  no-home: "&cNo home has been set."
+  teleport-moved: "&cTeleportation has been cancelled player moved."
+  no-invite: "&c%team% has not invited you."
+  invites: "&cYou have been invited to %teams%"
+  deposit: "&cYou have deposit %amount% to faction"
+  withdraw: "&cYou have withdrawed %amount% from faction"
+  invitation: "&cYou have been invited to %team%"
+  list: "&eTeam&7: &f%team% &eBalance&7: &f%balance%" # it will be in column
+
+wrong-usage:
+  - "&f&m-------------------------------"
+  - "&e/&7team create <name>"
+  - "&e/&7team disband"
+  - "&e/&7team leave"
+  - "&e/&7team sethome"
+  - "&e/&7team home"
+  - "&e/&7team invites"
+  - "&e/&7team invite"
+  - "&e/&7team uninvite"
+  - "&e/&7team accept <team>"
+  - "&e/&7team deposit <amount>"
+  - "&e/&7team withdraw <amount>"
+  - "6e/&7team list"
+  - "&f&m-------------------------------"
