@@ -38,30 +38,35 @@ public class TeamInviteCommand extends SubCommand {
             return;
         }
 
-        if (!role.equalsIgnoreCase("leader") || !role.equalsIgnoreCase("coleader")
-        || !role.equalsIgnoreCase("captain")) {
+        if (role.equalsIgnoreCase("leader") || role.equalsIgnoreCase("coleader")
+        || role.equalsIgnoreCase("captain")) {
+            if (args.length > 1) {
+                Player invited = Bukkit.getPlayer(args[1]);
+                if (teamUser.getTeamByPlayer(invited).equalsIgnoreCase(teamName)) {
+                    player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.your-team")));
+                    return;
+                }
+
+                if (teamUser.getTeamByPlayer(invited).equalsIgnoreCase(teamName)) {
+                    player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.in-team")));
+                    return;
+                }
+
+                if (!this.teamHandler.getInviteByName(invited).contains(teamName)) {
+                    player.sendMessage(CC.translate("&cYou have already invited this player"));
+                }
+
+                invited.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
+                        .getString("messages.invitation")
+                        .replace("%team%", teamName)));
+
+                this.teamHandler.putPlayer(invited, teamName);
+            } else {
+                player.sendMessage(CC.translate("Please provide a player."));
+            }
+        } else {
             player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
                     .getString("messages.permission-captain")));
-            player.sendMessage(role);
-            return;
-        }
-
-        if (args.length > 1) {
-            Player invited = Bukkit.getPlayer(args[1]);
-            if (teamUser.getTeamByPlayer(invited).equalsIgnoreCase(teamName)) {
-                player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.in-team")));
-                return;
-            }
-
-            if (!this.teamHandler.getInviteByName(invited).contains(teamName)) {
-                player.sendMessage(CC.translate("&cYou have already invited this player"));
-            }
-
-            invited.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
-                    .getString("messages.invitation")
-                    .replace("%team%", teamName)));
-
-            this.teamHandler.putPlayer(invited, teamName);
         }
     }
 }
