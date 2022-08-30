@@ -1,6 +1,6 @@
 name: Core
 version: '${project.version}'
-main: me.koz.beachsmp.Core
+main: me.koz.beachmode.Core
 api-version: 1.19
 description: Made by KacperM
 softdepend:

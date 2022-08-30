@@ -27,6 +27,7 @@ messages:
   withdraw: "&cYou have withdrawed %amount% from faction"
   invitation: "&cYou have been invited to %team%"
   list: "&eTeam&7: &f%team% &eBalance&7: &f%balance%" # it will be in column
+  top: "&f[&e%team_number%&f] &e%team_name% &7: &e%team_balance%"
 
 wrong-usage:
   - "&f&m-------------------------------"

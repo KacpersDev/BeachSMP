@@ -29,6 +29,7 @@ public class TeamCommandManager implements CommandExecutor {
         subCommands.add(new TeamInvitesCommand(Core.getInstance()));
         subCommands.add(new TeamDepositCommand(Core.getInstance()));
         subCommands.add(new TeamWithdrawCommand(Core.getInstance()));
+        subCommands.add(new TeamTopCommand(Core.getInstance()));
     }
 
     @Override

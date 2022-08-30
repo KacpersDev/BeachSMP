@@ -42,6 +42,8 @@ public class TeamHomeCommand extends SubCommand {
             return;
         }
 
+        player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.home-teleport")));
+
         new BukkitRunnable(){
 
             int teleportTimer = Core.getInstance().getTeamsSettingsConfiguration().getInt("settings.home-teleport");

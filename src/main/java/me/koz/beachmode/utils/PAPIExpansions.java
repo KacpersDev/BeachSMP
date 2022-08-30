@@ -24,7 +24,7 @@ public class PAPIExpansions extends PlaceholderExpansion {
 
     @Override
     public String onRequest(OfflinePlayer p, String params) {
-        if(params.equalsIgnoreCase("gold")){
+        if(params.equalsIgnoreCase("beach_gold")){
             Gold gold = new Gold(Core.getInstance(), p);
             try {
                 return String.valueOf(gold.getGold());

@@ -40,9 +40,9 @@ public class TeamListCommand extends SubCommand {
             }
         }
 
-        for (int i = 0; i < teams.size(); i++) {
-            String teamName = teams.get(i).getTeam();
-            int balance = teams.get(i).getBalance();
+        for (Team team : teams) {
+            String teamName = team.getTeam();
+            int balance = team.getBalance();
             player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.list")
                     .replace("%team%", teamName)
                     .replace("%balance%", String.valueOf(balance))));
