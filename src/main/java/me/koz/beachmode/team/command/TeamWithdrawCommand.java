@@ -49,6 +49,10 @@ public class TeamWithdrawCommand extends SubCommand {
                         player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.withdraw")
                                 .replace("%amount%", String.valueOf(amount))));
                     }
+                } else {
+                    player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
+                            .getString("messages.withdraw-failed")
+                            .replace("%amount%", args[1])));
                 }
             }
         } else {

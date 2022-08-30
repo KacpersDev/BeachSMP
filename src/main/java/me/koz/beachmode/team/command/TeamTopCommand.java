@@ -28,6 +28,11 @@ public class TeamTopCommand extends SubCommand {
     public void perform(Player player, String[] args) {
 
         List<Team> teams = new ArrayList<>();
+        if (this.core.getTeamsConfiguration().getConfigurationSection("Team") == null) {
+            player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
+                    .getString("messages.top-failed")));
+            return;
+        }
         for (String values : this.core.getTeamsConfiguration().getConfigurationSection("Team").getKeys(false)) {
             teams.add(new Team(this.core, values));
         }

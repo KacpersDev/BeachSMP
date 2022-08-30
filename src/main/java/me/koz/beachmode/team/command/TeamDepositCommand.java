@@ -40,6 +40,13 @@ public class TeamDepositCommand extends SubCommand {
         if (args.length > 1) {
             int amount = Integer.parseInt(args[1]);
             Team team = new Team(this.core, teamName);
+            int playerBalance = (int) economy.getBalance(player);
+            if (playerBalance < amount) {
+                player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
+                        .getString("messages.deposit-failed")
+                        .replace("%amount%", args[1])));
+                return;
+            }
             EconomyResponse response = economy.withdrawPlayer(player, amount);
             if (response.transactionSuccess()) {
                 team.setBalance(team.getBalance() + amount);

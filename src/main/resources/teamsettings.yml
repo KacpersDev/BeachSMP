@@ -24,11 +24,15 @@ messages:
   no-invite: "&c%team% has not invited you."
   invites: "&cYou have been invited to %teams%"
   deposit: "&cYou have deposit %amount% to faction"
-  withdraw: "&cYou have withdrawed %amount% from faction"
+  withdraw: "&cYou have withdrawed %amount% from team"
   invitation: "&cYou have been invited to %team%"
   your-team: "&cPlayer is already in your team."
+  withdraw-failed: "&cFailed to withdraw %amount% from team."
+  deposit-failed: "&cFailed to deposit %amount% to the team."
   list: "&eTeam&7: &f%team% &eBalance&7: &f%balance%" # it will be in column
+  list-failed: "&cNone"
   top: "&f[&e%team_number%&f] &e%team_name% &7: &e%team_balance%"
+  top-failed: "&cNone"
 
 wrong-usage:
   - "&f&m-------------------------------"

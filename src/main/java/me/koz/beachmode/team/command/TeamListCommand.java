@@ -33,6 +33,11 @@ public class TeamListCommand extends SubCommand {
     public void perform(Player player, String[] args) {
 
         List<Team> teams = new ArrayList<>();
+        if (this.core.getTeamsConfiguration().getConfigurationSection("Team") == null) {
+            player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
+                    .getString("messages.list-failed")));
+            return;
+        }
         for (String values : this.core.getTeamsConfiguration().getConfigurationSection("Team").getKeys(false)) {
             for (Player onlinePlayers : Bukkit.getOnlinePlayers()) {
                 TeamUser teamUser = new TeamUser(this.core);
