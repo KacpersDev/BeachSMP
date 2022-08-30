@@ -10,12 +10,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Getter
 public class TeamListCommand extends SubCommand {
 
     private final Core core;
+
+    public final Comparator<Team> compareTeamBalance = Comparator.comparing(Team::getTeam);
 
     public TeamListCommand(Core core) {
         this.core = core;
@@ -29,23 +32,23 @@ public class TeamListCommand extends SubCommand {
     @Override
     public void perform(Player player, String[] args) {
 
-        final List<Team> teams = new ArrayList<>();
-
-        for (Player online : Bukkit.getOnlinePlayers()) {
-            TeamUser teamUser = new TeamUser(Core.getInstance());
-            if (teamUser.getTeamByPlayer(online) != null) {
-                String userTeam = teamUser.getTeamByPlayer(online);
-                Team team = new Team(Core.getInstance(), userTeam);
-                teams.add(team);
+        List<Team> teams = new ArrayList<>();
+        for (String values : this.core.getTeamsConfiguration().getConfigurationSection("Team").getKeys(false)) {
+            for (Player onlinePlayers : Bukkit.getOnlinePlayers()) {
+                TeamUser teamUser = new TeamUser(this.core);
+                if (teamUser.getTeamByPlayer(onlinePlayers).equalsIgnoreCase(values)) {
+                    teams.add(new Team(this.core, values));
+                } else {
+                    player.sendMessage(teamUser.getTeamByPlayer(onlinePlayers));
+                }
             }
         }
 
         for (Team team : teams) {
-            String teamName = team.getTeam();
-            int balance = team.getBalance();
-            player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.list")
-                    .replace("%team%", teamName)
-                    .replace("%balance%", String.valueOf(balance))));
+            player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration()
+                    .getString("messages.list")
+                    .replace("%team%", team.getTeam())
+                    .replace("%balance%", String.valueOf(team.getBalance()))));
         }
     }
 }

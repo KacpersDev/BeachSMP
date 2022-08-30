@@ -30,6 +30,7 @@ public class TeamCommandManager implements CommandExecutor {
         subCommands.add(new TeamDepositCommand(Core.getInstance()));
         subCommands.add(new TeamWithdrawCommand(Core.getInstance()));
         subCommands.add(new TeamTopCommand(Core.getInstance()));
+        subCommands.add(new TeamListCommand(Core.getInstance()));
     }
 
     @Override
