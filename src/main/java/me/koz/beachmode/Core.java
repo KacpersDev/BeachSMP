@@ -1,10 +1,15 @@
 package me.koz.beachmode;
 
 import lombok.Getter;
+import me.koz.beachmode.challenge.ChallengeTask;
+import me.koz.beachmode.challenge.InventoryTask;
+import me.koz.beachmode.challenge.command.ChallengeCommand;
+import me.koz.beachmode.challenge.listener.ChallengeListener;
 import me.koz.beachmode.chat.ChatFormat;
 import me.koz.beachmode.combat.command.CCCommand;
 import me.koz.beachmode.combat.command.CombatCommand;
 import me.koz.beachmode.combat.listener.CombatListener;
+import me.koz.beachmode.death.listener.DeathMessageListener;
 import me.koz.beachmode.gold.command.GoldAdminCommand;
 import me.koz.beachmode.gold.command.GoldShopCommand;
 import me.koz.beachmode.gold.listener.GoldListener;
@@ -32,12 +37,14 @@ public final class Core extends JavaPlugin {
     private final File region = new File(getDataFolder(), "region.yml");
     private final File boss = new File(getDataFolder(), "boss.yml");
     private final File teleport = new File(getDataFolder(), "teleport.yml");
+    private final File challenge = new File(getDataFolder(), "challenge.yml");
     private final File combat = new File(getDataFolder(), "combat.yml");
     private final File teams = new File(getDataFolder(), "teams.yml");
     private final File teamSettings = new File(getDataFolder(), "teamsettings.yml");
     private final File teamsUser = new File(getDataFolder(), "teamsuser.yml");
     private final FileConfiguration dataConfiguration = new YamlConfiguration();
 
+    private final FileConfiguration challengeConfiguration = new YamlConfiguration();
     private final FileConfiguration teamsConfiguration = new YamlConfiguration();
     private final FileConfiguration teamsUserConfiguration = new YamlConfiguration();
 
@@ -69,6 +76,8 @@ public final class Core extends JavaPlugin {
         }
         setupEconomy();
         setupChat();
+        new ChallengeTask().runTaskTimer(this, 0L,20L);
+        new InventoryTask().runTaskTimer(this, 0L,20L);
     }
 
     public static Core getInstance() {
@@ -85,6 +94,8 @@ public final class Core extends JavaPlugin {
         manager.registerEvents(new GoldListener(this),this);
         manager.registerEvents(new CombatListener(this),this);
         manager.registerEvents(new ChatFormat(), this);
+        manager.registerEvents(new ChallengeListener(), this);
+        manager.registerEvents(new DeathMessageListener(this),this);
     }
 
     private void command(){
@@ -94,6 +105,7 @@ public final class Core extends JavaPlugin {
         getCommand("ct").setExecutor(new CombatCommand(this));
         getCommand("wild").setExecutor(new RandomTPCommand(this));
         getCommand("cc").setExecutor(new CCCommand());
+        getCommand("challenge").setExecutor(new ChallengeCommand());
     }
 
     private void config(){
@@ -107,6 +119,7 @@ public final class Core extends JavaPlugin {
         new Config(teams, teamsConfiguration, "teams.yml");
         new Config(teamSettings, teamsSettingsConfiguration, "teamsettings.yml");
         new Config(teamsUser, teamsUserConfiguration, "teamsuser.yml");
+        new Config(challenge, challengeConfiguration, "challenge.yml");
     }
 
     private void fix(){

@@ -1,0 +1,312 @@
+# challenges:
+# DIAMOND_MINED, EMERALD_MINED, IRON_MINED,
+# GOLD_MINED, SKELETON_KILLED, ZOMBIE_KILLED,
+# COW_KILLED, BLOCK_MINED, BLOCK_PLACED, PLAYER_KILLED,
+
+challenge:
+  DIAMOND_MINED:
+    item: "DIAMOND"
+    name: "&bMine as much diamonds"
+    lore:
+      - "&f&m-----------------------"
+      - "&bMine as much diamonds you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  EMERALD_MINED:
+    item: "EMERALD"
+    name: "&bMine as much emeralds"
+    lore:
+      - "&f&m-----------------------"
+      - "&bMine as much emeralds you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  IRON_MINED:
+    item: "IRON_ORE"
+    name: "&bMine as much iron"
+    lore:
+      - "&f&m-----------------------"
+      - "&bMine as much iron you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  GOLD_MINED:
+    item: "GOLD_ORE"
+    name: "&bMine as much golds"
+    lore:
+      - "&f&m-----------------------"
+      - "&bMine as much gold you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  SKELETON_KILLED:
+    item: "BEDROCK"
+    name: "&bKill as much skeletons"
+    lore:
+      - "&f&m-----------------------"
+      - "&bKill as much skeletons you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  ZOMBIE_KILLED:
+    item: "BEDROCK"
+    name: "&bKill as much zombies"
+    lore:
+      - "&f&m-----------------------"
+      - "&bKill as much zombies you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  COW_KILLED:
+    item: "BEDROCK"
+    name: "&bKill as much cows"
+    lore:
+      - "&f&m-----------------------"
+      - "&bKill as much cows you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  BLOCK_MINED:
+    item: "STONE"
+    name: "&bMine as much blocks"
+    lore:
+      - "&f&m-----------------------"
+      - "&bMine as much blocks you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  PLAYER_KILLED:
+    item: "BEDROCK"
+    name: "&bKill as much players"
+    lore:
+      - "&f&m-----------------------"
+      - "&bKill as much players you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+  BLOCK_PLACED:
+    item: "STONE"
+    name: "&bPlace as much blocks"
+    lore:
+      - "&f&m-----------------------"
+      - "&bMine as much place you can"
+      - ""
+      - "&eTimer&7: &f%timer_hours%:%timer_minutes%:%timer_seconds%"
+      - ""
+      - "&61&7: &f%user_1% &7: &f%value_1%"
+      - "&62&7: &f%user_2% &7: &f%value_2%"
+      - "&63&7: &f%user_3% &7: &f%value_3%"
+      - ""
+      - "&6You &7: &f%you% &7: &f%value_you%"
+      - "&f&m-----------------------"
+    rewards1:
+      commands:
+        - ""
+        - "give %player% stone 1"
+        - ""
+    rewards2:
+      commands:
+        - ""
+        - "give %player% diamond 1"
+        - ""
+    rewards3:
+      commands:
+        - ""
+        - "give %player% emerald 1"
+        - ""
+
+challenge-timer: 100
+
+inventory:
+  title: "&dChallenge Inventory"
+  size: 9

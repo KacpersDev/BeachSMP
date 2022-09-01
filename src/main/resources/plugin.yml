@@ -14,3 +14,4 @@ commands:
   cc:
   team:
     aliases: [t]
+  challenge:

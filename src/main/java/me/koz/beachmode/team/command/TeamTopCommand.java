@@ -5,7 +5,12 @@ import me.koz.beachmode.Core;
 import me.koz.beachmode.team.Team;
 import me.koz.beachmode.team.manager.SubCommand;
 import me.koz.beachmode.utils.CC;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
 
@@ -43,7 +48,6 @@ public class TeamTopCommand extends SubCommand {
             if (i >= teams.size()) {
                 break;
             }
-
             Team team = teams.get(i);
             int teamNumber = i + 1;
             player.sendMessage(CC.translate(this.core.getTeamsSettingsConfiguration().getString("messages.top")

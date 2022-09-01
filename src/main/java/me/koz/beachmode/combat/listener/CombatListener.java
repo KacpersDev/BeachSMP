@@ -79,14 +79,16 @@ public class CombatListener implements Listener {
         if (event.getEntity().getKiller() == null && !(event.getEntity().getKiller() instanceof Player)) return;
         Player player = event.getEntity().getKiller();
         Player p = Bukkit.getPlayer(Combat.players.get(player.getUniqueId()));
-        UUID uuid = Combat.entitiesList.get(p.getUniqueId());
-        LivingEntity entity = Combat.entities.get(uuid);
-        if (entity.getType() == EntityType.VILLAGER) {
-            Location location = entity.getLocation();
-            if (entity.isDead()) {
-                for (ItemStack item : Combat.items.get(uuid)) {
-                    if (item != null) {
-                        location.getWorld().dropItemNaturally(location, item);
+        if (p != null) {
+            UUID uuid = Combat.entitiesList.get(p.getUniqueId());
+            LivingEntity entity = Combat.entities.get(uuid);
+            if (entity.getType() == EntityType.VILLAGER) {
+                Location location = entity.getLocation();
+                if (entity.isDead()) {
+                    for (ItemStack item : Combat.items.get(uuid)) {
+                        if (item != null) {
+                            location.getWorld().dropItemNaturally(location, item);
+                        }
                     }
                 }
             }
