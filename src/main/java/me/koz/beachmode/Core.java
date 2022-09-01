@@ -9,7 +9,6 @@ import me.koz.beachmode.chat.ChatFormat;
 import me.koz.beachmode.combat.command.CCCommand;
 import me.koz.beachmode.combat.command.CombatCommand;
 import me.koz.beachmode.combat.listener.CombatListener;
-import me.koz.beachmode.death.listener.DeathMessageListener;
 import me.koz.beachmode.gold.command.GoldAdminCommand;
 import me.koz.beachmode.gold.command.GoldShopCommand;
 import me.koz.beachmode.gold.listener.GoldListener;
@@ -95,7 +94,6 @@ public final class Core extends JavaPlugin {
         manager.registerEvents(new CombatListener(this),this);
         manager.registerEvents(new ChatFormat(), this);
         manager.registerEvents(new ChallengeListener(), this);
-        manager.registerEvents(new DeathMessageListener(this),this);
     }
 
     private void command(){

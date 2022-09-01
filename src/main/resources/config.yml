@@ -731,6 +731,3 @@ messages:
 
 chat-format: "%rank% %player% %message%"
 chat-format-team: "%team% %rank% %player% %message%"
-
-death:
-  message: "&c%player% was slained by %killer%"
